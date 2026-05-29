@@ -10,3 +10,5 @@ I am currently a software engineer.
 I enjoy working on web engineering and DevOps. I studied Computer Science and Artificial Intelligence (with a focus on computer vision and prediction) during my bachelor's degree.
 
 Connect with me on [LinkedIn](https://linkedin.com/in/h23a), [GitHub](https://github.com/h23a) or [hi@hiskia.app](mailto:hi@hiskia.app).
+
+*hiskia.app is short for my full name, Hiskia Anggi Puji Pratama.*
