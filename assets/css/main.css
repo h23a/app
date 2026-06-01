@@ -122,6 +122,45 @@ a {
   text-align: right;
 }
 
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.72em;
+  justify-self: end;
+  padding: 0.46em 0.62em 0.42em;
+  border: 1px solid oklch(28% 0.03 60 / 0.22);
+  border-bottom-color: oklch(63% 0.155 52 / 0.74);
+  background: oklch(97% 0.012 90 / 0.62);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: clamp(10px, 0.78vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.18s;
+}
+
+.resume-link svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+  color: var(--orange);
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  fill: none;
+}
+
+.resume-link:hover {
+  border-color: oklch(63% 0.155 52 / 0.75);
+  background: oklch(80% 0.11 92 / 0.22);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
 main {
   position: relative;
   z-index: 2;
@@ -505,6 +544,12 @@ main {
   .meta .right {
     max-width: 28ch;
     text-align: left;
+  }
+
+  .resume-link {
+    justify-self: start;
+    font-size: 10px;
+    letter-spacing: 0.14em;
   }
 
   .kicker {
