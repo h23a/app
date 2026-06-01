@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "hugo": {
+      "source": "secondsky/claude-skills",
+      "sourceType": "github",
+      "skillPath": "plugins/hugo/skills/hugo/SKILL.md",
+      "computedHash": "e31c652c8649b9480bc400ea9313e5aa07285cf9b7d13d763cbfe1bca07fc1da"
+    }
+  }
+}

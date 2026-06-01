@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Hiskia software engineer">
+  <rect width="1200" height="630" fill="#f3ecdc"/>
+  <circle cx="1030" cy="88" r="180" fill="#d46e34" opacity=".13"/>
+  <text x="84" y="130" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" letter-spacing="8" fill="#6b654f">HISKIA.APP</text>
+  <text x="82" y="328" font-family="Iowan Old Style, Georgia, serif" font-size="112" fill="#4f4438">web &amp; ops,</text>
+  <text x="82" y="448" font-family="Iowan Old Style, Georgia, serif" font-size="112" font-style="italic" fill="#9f5f33">by hand.</text>
+  <text x="82" y="532" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34" fill="#6b654f">Hiskia ʕ•ᴥ•ʔ · Software Engineer</text>
+</svg>

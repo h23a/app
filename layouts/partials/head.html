@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }} - Software Engineer{{ else }}{{ printf "%s - %s" .Title site.Title }}{{ end }}</title>
+<meta name="description" content="{{ .Description | default site.Params.description }}">
+<meta name="theme-color" content="#f3ecdc">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ with site.Params.favicon }}<link rel="icon" href="{{ . | relURL }}" type="image/svg+xml">{{ end }}
+{{ with resources.Get "css/main.css" }}
+  {{ $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
