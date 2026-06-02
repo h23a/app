@@ -2,7 +2,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ site.Title }} - Software Engineer{{ else }}{{ printf "%s - %s" .Title site.Title }}{{ end }}</title>
 <meta name="description" content="{{ .Description | default site.Params.description }}">
-<meta name="theme-color" content="#f3ecdc">
+<meta name="theme-color" content="#ffffff">
+<script>
+  if (new URLSearchParams(window.location.search).get("styledVersion") === "true") {
+    document.documentElement.dataset.styledVersion = "true";
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", "#f3ecdc");
+  }
+</script>
 <link rel="canonical" href="{{ .Permalink }}">
 {{ with site.Params.favicon }}<link rel="icon" href="{{ . | relURL }}" type="image/svg+xml">{{ end }}
 {{ with resources.Get "css/main.css" }}

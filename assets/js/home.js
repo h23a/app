@@ -87,7 +87,15 @@ function addInkTrail() {
   });
 }
 
-splitName();
-duplicateTicker();
-addPetals();
-addInkTrail();
+function initStyledHome() {
+  if (document.documentElement.dataset.styledVersion !== "true") {
+    return;
+  }
+
+  splitName();
+  duplicateTicker();
+  addPetals();
+  addInkTrail();
+}
+
+initStyledHome();

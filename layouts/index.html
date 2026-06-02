@@ -1,57 +1,84 @@
 {{ define "main" }}
-  <div class="motifs" aria-hidden="true">
-    <div class="sun"></div>
-    <div class="seigaiha"></div>
-    <div class="ink a"></div>
-    <div class="ink b"></div>
-    <span class="ghost num">01</span>
-    <span class="ghost engineer">ENGINEER</span>
-  </div>
-  <div class="frame" aria-hidden="true"></div>
-
-  <main>
-    <div class="meta">
-      <a href="{{ "" | relURL }}"><span class="dot">●</span>&nbsp; hiskia.app</a>
-      <span class="mid">Personal&nbsp;/&nbsp;Index</span>
-      <a class="resume" href="{{ site.Params.resumeURL }}" target="_blank" rel="noopener">
-        Download Resume <span class="arr">↓</span>
+  <article class="simple-home" aria-labelledby="simple-title">
+    <header>
+      <a href="{{ "" | relURL }}" class="simple-title">
+        <h1 id="simple-title">{{ site.Title }}</h1>
       </a>
+    </header>
+
+    <p>I am currently a software engineer.</p>
+
+    <p>I enjoy working on web engineering and DevOps. I studied Computer Science and Artificial Intelligence (with a focus on computer vision and prediction) during my bachelor's degree.</p>
+
+    <p>Connect with me on
+      <a href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LinkedIn</a>,
+      <a href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GitHub</a> or
+      <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>.
+    </p>
+
+    <p><em>hiskia.app is short for my full name, Hiskia Anggi Puji Pratama.</em></p>
+
+    <nav class="simple-links" aria-label="More links">
+      <a href="{{ site.Params.resumeURL }}" target="_blank" rel="noopener">Download resume</a>
+      <a href="{{ "?styledVersion=true" | relURL }}">View styled version</a>
+    </nav>
+  </article>
+
+  <div class="styled-home">
+    <div class="motifs" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="seigaiha"></div>
+      <div class="ink a"></div>
+      <div class="ink b"></div>
+      <span class="ghost num">01</span>
+      <span class="ghost engineer">ENGINEER</span>
     </div>
+    <div class="frame" aria-hidden="true"></div>
 
-    <section class="hero" aria-labelledby="intro-title">
-      <div class="kicker">Web &amp; Ops</div>
-      <h1 class="name" id="intro-title" aria-label="Hiskia">Hiskia<span class="bear" aria-hidden="true">ʕ<span class="eye">•</span>ᴥ<span class="eye">•</span>ʔ</span></h1>
-      <p class="role">I am currently a software engineer<span class="stop">.</span></p>
-    </section>
-
-    <section class="copy" aria-label="About Hiskia">
-      <p>I enjoy working on <span class="hl web">web engineering</span> and <span class="hl ops">DevOps</span>. I studied Computer Science and Artificial Intelligence (with a focus on computer vision and prediction) during my bachelor's degree.</p>
-      <p>Connect with me on
-        <a class="link ln" href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LinkedIn</a>,
-        <a class="link gh" href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GitHub</a> or
-        <a class="link em" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>.
-      </p>
-      <p>hiskia.app is short for my full name, <em>Hiskia Anggi Puji Pratama</em>.</p>
-    </section>
-
-    <div class="colophon">
-      <span>Web Engineering <b>/</b> DevOps</span>
-      <span>Computer Vision <b>/</b> Prediction</span>
-      <span>h23a</span>
-    </div>
-  </main>
-
-  <footer>
-    <div class="ticker" aria-label="Identity marquee">
-      <div class="ticker-track" id="track">
-        <span class="primary">HISKIA</span><span class="sep">/</span>
-        <span>SOFTWARE ENGINEER</span><span class="sep">/</span>
-        <span class="primary">WEB ENGINEERING</span><span class="sep">/</span>
-        <span>DEVOPS</span><span class="sep">/</span>
-        <span class="primary"><a href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LINKEDIN</a></span><span class="sep">/</span>
-        <span><a href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GITHUB</a></span><span class="sep">/</span>
-        <span class="primary"><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></span><span class="sep">/</span>
+    <main>
+      <div class="meta">
+        <a href="{{ "" | relURL }}"><span class="dot">●</span>&nbsp; hiskia.app</a>
+        <span class="mid">Personal&nbsp;/&nbsp;Index</span>
+        <a class="resume" href="{{ site.Params.resumeURL }}" target="_blank" rel="noopener">
+          Download Resume <span class="arr">↓</span>
+        </a>
       </div>
-    </div>
-  </footer>
+
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="kicker">Web &amp; Ops</div>
+        <h1 class="name" id="intro-title" aria-label="Hiskia">Hiskia<span class="bear" aria-hidden="true">ʕ<span class="eye">•</span>ᴥ<span class="eye">•</span>ʔ</span></h1>
+        <p class="role">I am currently a software engineer<span class="stop">.</span></p>
+      </section>
+
+      <section class="copy" aria-label="About Hiskia">
+        <p>I enjoy working on <span class="hl web">web engineering</span> and <span class="hl ops">DevOps</span>. I studied Computer Science and Artificial Intelligence (with a focus on computer vision and prediction) during my bachelor's degree.</p>
+        <p>Connect with me on
+          <a class="link ln" href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LinkedIn</a>,
+          <a class="link gh" href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GitHub</a> or
+          <a class="link em" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>.
+        </p>
+        <p>hiskia.app is short for my full name, <em>Hiskia Anggi Puji Pratama</em>.</p>
+      </section>
+
+      <div class="colophon">
+        <span>Web Engineering <b>/</b> DevOps</span>
+        <span>Computer Vision <b>/</b> Prediction</span>
+        <span>h23a</span>
+      </div>
+    </main>
+
+    <footer>
+      <div class="ticker" aria-label="Identity marquee">
+        <div class="ticker-track" id="track">
+          <span class="primary">HISKIA</span><span class="sep">/</span>
+          <span>SOFTWARE ENGINEER</span><span class="sep">/</span>
+          <span class="primary">WEB ENGINEERING</span><span class="sep">/</span>
+          <span>DEVOPS</span><span class="sep">/</span>
+          <span class="primary"><a href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LINKEDIN</a></span><span class="sep">/</span>
+          <span><a href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GITHUB</a></span><span class="sep">/</span>
+          <span class="primary"><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></span><span class="sep">/</span>
+        </div>
+      </div>
+    </footer>
+  </div>
 {{ end }}
