@@ -2,72 +2,92 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-function duplicateTicker() {
-  const track = document.getElementById("track");
-  const group = document.getElementById("tgroup");
-
-  if (!track || !group) {
-    return;
-  }
-
-  const clone = group.cloneNode(true);
-  clone.removeAttribute("id");
-  clone.setAttribute("aria-hidden", "true");
-  track.appendChild(clone);
-}
-
-function flickerName() {
+function splitName() {
   const name = document.getElementById("intro-title");
 
-  if (prefersReducedMotion() || !name) {
+  if (!name) {
     return;
   }
 
-  name.style.opacity = "0";
-  name.style.transition = "opacity 0.5s ease";
+  const bear = name.querySelector(".bear");
+  const fragment = document.createDocumentFragment();
 
-  [0, 60, 90, 160, 200, 320].forEach((time, index) => {
-    window.setTimeout(() => {
-      name.style.opacity = index % 2 ? "0.35" : "1";
-    }, time);
+  "Hiskia".split("").forEach((character, index) => {
+    const span = document.createElement("span");
+    span.className = "ch";
+    span.textContent = character;
+    span.style.animationDelay = `${0.15 + index * 0.07}s, ${1.2 + index * 0.18}s`;
+    fragment.appendChild(span);
   });
 
-  window.setTimeout(() => {
-    name.style.opacity = "1";
-  }, 380);
+  let node = name.firstChild;
+  while (node && node !== bear) {
+    const next = node.nextSibling;
+    name.removeChild(node);
+    node = next;
+  }
+
+  name.insertBefore(fragment, bear);
 }
 
-function blinkEyes() {
-  const eyes = document.getElementById("bear-eyes");
+function duplicateTicker() {
+  const track = document.getElementById("track");
 
-  if (prefersReducedMotion() || !eyes) {
+  if (track) {
+    track.innerHTML += track.innerHTML;
+  }
+}
+
+function addPetals() {
+  if (prefersReducedMotion()) {
     return;
   }
 
-  const open = "ʕ•ᴥ•ʔ";
-  const shut = "ʕ-ᴥ-ʔ";
+  const motifs = document.querySelector(".motifs");
 
-  function blink() {
-    eyes.textContent = shut;
-    window.setTimeout(() => {
-      eyes.textContent = open;
-    }, 130);
-
-    if (Math.random() < 0.3) {
-      window.setTimeout(() => {
-        eyes.textContent = shut;
-      }, 300);
-      window.setTimeout(() => {
-        eyes.textContent = open;
-      }, 420);
-    }
-
-    window.setTimeout(blink, 2200 + Math.random() * 3200);
+  if (!motifs) {
+    return;
   }
 
-  window.setTimeout(blink, 1600);
+  for (let i = 0; i < 12; i += 1) {
+    const petal = document.createElement("span");
+    petal.className = "petal";
+    petal.style.left = `${6 + Math.random() * 88}%`;
+    petal.style.animationDuration = `${12 + Math.random() * 12}s`;
+    petal.style.animationDelay = `${Math.random() * 14}s`;
+    petal.style.transform = `scale(${0.7 + Math.random() * 0.8})`;
+    motifs.appendChild(petal);
+  }
 }
 
+function addInkTrail() {
+  if (prefersReducedMotion() || window.matchMedia("(pointer: coarse)").matches) {
+    return;
+  }
+
+  let lastDot = 0;
+
+  window.addEventListener("pointermove", (event) => {
+    const now = performance.now();
+
+    if (now - lastDot < 110) {
+      return;
+    }
+
+    lastDot = now;
+    const dot = document.createElement("span");
+    dot.className = "trail-dot";
+    dot.style.left = `${event.clientX}px`;
+    dot.style.top = `${event.clientY}px`;
+    document.body.appendChild(dot);
+
+    window.setTimeout(() => {
+      dot.remove();
+    }, 900);
+  });
+}
+
+splitName();
 duplicateTicker();
-flickerName();
-blinkEyes();
+addPetals();
+addInkTrail();

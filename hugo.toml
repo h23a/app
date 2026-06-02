@@ -1,4 +1,4 @@
-baseURL = "https://hiskia.app"
+baseURL = "https://hiskia.app/"
 title = "Hiskia ʕ•ᴥ•ʔ"
 author = "Hiskia"
 copyright = "Copyright © 2026, Hiskia."
@@ -17,7 +17,7 @@ description = "Software engineer working across web engineering, DevOps, and inf
 favicon = "images/favicon.svg"
 images = ["images/share.svg"]
 title = "Hiskia ʕ•ᴥ•ʔ"
-workURL = "https://read.cv/hiskia"
 linkedinURL = "https://linkedin.com/in/h23a"
 githubURL = "https://github.com/h23a"
 email = "hi@hiskia.app"
+resumeURL = "https://pub-12c9ed92f5ff4807b994f5dc53bbdb51.r2.dev/Hiskia%20Pratama.pdf"

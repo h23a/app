@@ -1,69 +1,56 @@
 {{ define "main" }}
-  <div class="bg-type" aria-hidden="true">
-    <span class="bg-num">01</span>
-    <span class="bg-word-1">ENGINEER</span>
-    <span class="bg-word-2">DEVOPS</span>
-    <span class="bg-tiny">HISKIA.APP · SITE</span>
+  <div class="motifs" aria-hidden="true">
+    <div class="sun"></div>
+    <div class="seigaiha"></div>
+    <div class="ink a"></div>
+    <div class="ink b"></div>
+    <span class="ghost num">01</span>
+    <span class="ghost engineer">ENGINEER</span>
   </div>
-
-  <header class="meta">
-    <a href="{{ "" | relURL }}"><span class="dot">●</span> HISKIA.APP</a>
-    <a class="resume-link" href="https://pub-12c9ed92f5ff4807b994f5dc53bbdb51.r2.dev/Hiskia%20Pratama.pdf" target="_blank" rel="noopener" aria-label="Download Resume PDF">
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" />
-      </svg>
-      <span>Download Resume</span>
-    </a>
-  </header>
+  <div class="frame" aria-hidden="true"></div>
 
   <main>
+    <div class="meta">
+      <a href="{{ "" | relURL }}"><span class="dot">●</span>&nbsp; hiskia.app</a>
+      <span class="mid">Personal&nbsp;/&nbsp;Index</span>
+      <a class="resume" href="{{ site.Params.resumeURL }}" target="_blank" rel="noopener">
+        Download Resume <span class="arr">↓</span>
+      </a>
+    </div>
+
     <section class="hero" aria-labelledby="intro-title">
-      <p class="kicker"><span class="pip"></span>Currently · a software engineer</p>
-
-      <div class="lockup">
-        <div class="bear">Hiskia <span class="eyes" id="bear-eyes">ʕ•ᴥ•ʔ</span></div>
-        <h1 class="name" id="intro-title"><em>web</em> &amp; ops</h1>
-      </div>
-
-      <p class="role">I build for the <span class="accent">web</span> and keep the
-        <span class="accent">infrastructure</span> honest.<span class="caret" aria-hidden="true">_</span></p>
+      <div class="kicker">Web &amp; Ops</div>
+      <h1 class="name" id="intro-title" aria-label="Hiskia">Hiskia<span class="bear" aria-hidden="true">ʕ<span class="eye">•</span>ᴥ<span class="eye">•</span>ʔ</span></h1>
+      <p class="role">I am currently a software engineer<span class="stop">.</span></p>
     </section>
 
-    <section class="body-col" aria-label="About Hiskia">
-      <p class="note">I enjoy working on <span class="craft web">web&nbsp;engineering</span>
-      and <span class="craft ops">DevOps</span>. I studied Computer Science and Artificial
-      Intelligence, with a focus on computer vision and prediction, during my bachelor's degree.</p>
-
-      <p class="connect">Connect with me on
-        <a class="li" href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LinkedIn</a>,
-        <a class="gh" href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GitHub</a> or
-        <a class="em" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>.
+    <section class="copy" aria-label="About Hiskia">
+      <p>I enjoy working on <span class="hl web">web engineering</span> and <span class="hl ops">DevOps</span>. I studied Computer Science and Artificial Intelligence (with a focus on computer vision and prediction) during my bachelor's degree.</p>
+      <p>Connect with me on
+        <a class="link ln" href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LinkedIn</a>,
+        <a class="link gh" href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GitHub</a> or
+        <a class="link em" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>.
       </p>
-
-      <p class="footnote"><span class="mark">↳</span> <span>hiskia.app is short for my full name,
-      Hiskia Anggi Puji Pratama.</span></p>
+      <p>hiskia.app is short for my full name, <em>Hiskia Anggi Puji Pratama</em>.</p>
     </section>
+
+    <div class="colophon">
+      <span>Web Engineering <b>/</b> DevOps</span>
+      <span>Computer Vision <b>/</b> Prediction</span>
+      <span>h23a</span>
+    </div>
   </main>
 
-  <footer class="ticker" aria-label="Looping profile links">
-    <div class="ticker__track" id="track">
-      <div class="ticker__group" id="tgroup">
-        <span class="ticker__item is-name">Hiskia Anggi Puji Pratama</span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-role">Software Engineer</span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-web">Web Engineering</span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-devops">DevOps</span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-github"><a href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GitHub / h23a</a></span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-linkedin"><a href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LinkedIn / h23a</a></span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-email"><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></span>
-        <span class="ticker__sep">·</span>
-        <span class="ticker__item is-mark">ʕ•ᴥ•ʔ</span>
-        <span class="ticker__sep">·</span>
+  <footer>
+    <div class="ticker" aria-label="Identity marquee">
+      <div class="ticker-track" id="track">
+        <span class="primary">HISKIA</span><span class="sep">/</span>
+        <span>SOFTWARE ENGINEER</span><span class="sep">/</span>
+        <span class="primary">WEB ENGINEERING</span><span class="sep">/</span>
+        <span>DEVOPS</span><span class="sep">/</span>
+        <span class="primary"><a href="{{ site.Params.linkedinURL }}" target="_blank" rel="noopener">LINKEDIN</a></span><span class="sep">/</span>
+        <span><a href="{{ site.Params.githubURL }}" target="_blank" rel="noopener">GITHUB</a></span><span class="sep">/</span>
+        <span class="primary"><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></span><span class="sep">/</span>
       </div>
     </div>
   </footer>
